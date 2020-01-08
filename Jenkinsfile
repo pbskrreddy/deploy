@@ -1,4 +1,4 @@
-pipeline {
+node {
     def mvn = tool (name: 'maven 3', type: 'maven') + '/bin/mvn'
     stage('SCM Checkout'){
     // Clone repo
