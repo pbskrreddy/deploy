@@ -27,7 +27,7 @@ node {
   	   sshagent(['ansadmin']) {
    
        
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 source /home/ansadmin/build.sh "
+    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 docker build https://github.com/krisdvs/deploy.git#Dockerfile "
  }
    }
    stage('docker container'){
