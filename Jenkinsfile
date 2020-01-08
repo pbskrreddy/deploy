@@ -6,8 +6,8 @@ node {
   }
     def mvn = tool (name: 'maven 3', type: 'maven') + '/bin/mvn'
     stage('SCM Checkout'){
-    // Clone repo
-	url: 'https://github.com/krisdvs/deploy.git'
+   
+	git 'https://github.com/krisdvs/deploy.git'
    
    }
    
