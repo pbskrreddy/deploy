@@ -1,9 +1,12 @@
 node {
+    environment {
+    registry = "krishna471/pipe_1"
+    registryCredential = 'dockerhub'
+    
+  }
     def mvn = tool (name: 'maven 3', type: 'maven') + '/bin/mvn'
     stage('SCM Checkout'){
     // Clone repo
-	git branch: 'master', 
-	credentialsId: 'github', 
 	url: 'https://github.com/krisdvs/deploy.git'
    
    }
