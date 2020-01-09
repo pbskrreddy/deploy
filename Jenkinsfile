@@ -27,16 +27,10 @@ node {
   	   sshagent(['ansadmin']) {
    
        
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 docker build -t krishna-dev-img ."
+    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 source build.sh"
  }
    }
-   stage('docker container'){
-      sshagent(['ansadmin']) {
-   def dockerRun = 'docker run -d -p 8080:8080 --name krish_dev_continer krishna-devimg '
    
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 ${dockerRun}"
-   }
-   }
    
        
     
