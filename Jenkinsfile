@@ -18,7 +18,7 @@ node {
 	   
 	stage('deploy_to_ans'){
 	   sshagent(['ansadmin']) {
-    sh "scp -r webapp/target/webapp.war ec2-user@172.31.93.153:/home/ansadmin"
+    sh "scp -r webapp/target/webapp.war ec2-user@172.31.93.153:/home/ec2-user"
   }
 	}
     
@@ -32,7 +32,7 @@ node {
    }
    stage('docker container'){
       sshagent(['ansadmin']) {
-   def dockerRun = 'docker run -d -p 8080:8080 --name myweb krishna-devimg '
+   def dockerRun = 'docker run -d -p 8080:8080 --name krish_dev_continer krishna-devimg '
    
     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 ${dockerRun}"
    }
