@@ -1,7 +1,6 @@
 node {
     environment {
-    registry = "krishna471/pipe_1"
-    registryCredential = 'dockerhub'
+    
     
   }
     def mvn = tool (name: 'maven 3', type: 'maven') + '/bin/mvn'
@@ -27,7 +26,7 @@ node {
   	   sshagent(['ansadmin']) {
    
        
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 source build.sh"
+    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.93.153 ansible-playbook /home/ec2-user/updt_proje.yml"
  }
    }
    
