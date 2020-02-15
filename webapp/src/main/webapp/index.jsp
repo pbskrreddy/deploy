@@ -8,6 +8,7 @@
 <title>urrent Date</title>
 </head>
 <body>
+    <h2> Devops hardwork never fails </h2> 
     <h3>Hi welcome to devops project</h3><br>
     <h4> if your are here check the date once </h4>
 Today's date: <%= (new java.util.Date()).toLocaleString()%>
